@@ -1,0 +1,12 @@
+{% extends "cognitoapp/base.html" %}
+{% load widget_tweaks %}
+{% block cognito_form %}
+    <div class="container activation-form">
+        <form method="get" action="{% url "sucess" %}">
+            {% csrf_token %}
+            <h2>Welcome..You are successfully logged in..</h2>
+            <br><br>
+            <button type="submit" class="btn btn-default">Log out</button>
+        </form>
+    </div>
+{% endblock %}

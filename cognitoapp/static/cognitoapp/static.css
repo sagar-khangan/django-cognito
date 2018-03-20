@@ -1,0 +1,12 @@
+
+.activation-form{
+    background-color: #ccc;
+    width: 500px !important;
+    height: 325px ;
+    padding: 30px !important;
+    margin-top: 100px;
+}
+
+.activate-button{
+    background-color: green;
+}

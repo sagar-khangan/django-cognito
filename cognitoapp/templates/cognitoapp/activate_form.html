@@ -1,0 +1,33 @@
+{%  extends "cognitoapp/base.html" %}
+{% load widget_tweaks %}
+{% block cognito_form %}
+
+<div class="container activation-form">
+    <form method="post" action="/app/activate/">
+    {% csrf_token %}
+        <div class="form-group" >
+        <label for="email">User Name:</label>
+        {% render_field form.username class+="form-control" %}
+
+    </div>
+    <div class="form-group">
+        <label for="pwd">Activation Code:</label>
+        {% render_field form.activation_code class+="form-control" %}
+
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        {% render_field form.password class+="form-control" %}
+
+    </div>
+    <button type="submit" class="btn btn-default">Activate</button>
+
+</form>
+<div style="color: red">
+ {% if error %}
+     <h4>{{ error }}</h4>
+ {% endif %}</div>
+</div>
+
+</div>
+{% endblock %}
